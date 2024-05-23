@@ -16,5 +16,5 @@ int main(){
         i++;
         
     }
-    cout<<p;
+    cout<<p;f
  }
