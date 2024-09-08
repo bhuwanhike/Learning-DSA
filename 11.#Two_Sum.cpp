@@ -1,27 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
-// Brute force
 
-// class Solution {
-// public:
-//     vector<int> twoSum(vector<int>& nums, int target) {
-//         vector<int> p;
-//         for(int i = 0; i<nums.size(); i++){
-//             for(int k = i+1; k<nums.size(); k++){
-//                 if((nums[k]+nums[i])== target){
-//                     p.push_back(k);
-//                     p.push_back(i);
-//                 }
-//             }
-//         }   
-        
-//         return p;
-//     }
-// };
-
-
-// Optimal approach
+vector<int> nums = {2,0,2,1,1,0};
 int main(){
-    map<int,int> p;
-    cout<<p[0];
+    int r = 0;
+        int w = 0;
+        int b = 0;
+        for(int i = 0; i<nums.size(); i++){
+            if(nums[i]==0) r++;
+            if(nums[i]==1) w++;
+            if(nums[i]==2) b++;   
+        }    
+        for(int i = 0; i<nums.size(); i++){
+            if(i=0 || i<r){
+                nums[i]=0;
+            }
+            if(i=r || (i<(r+w))){
+                nums[i]=1;
+            }
+            if(i=(r+w) || (i<(r+w+b))){
+                nums[i]=1;
+            }
+        }
+        for(auto it: nums){
+            cout<<it<<" ";
+        }
 }
