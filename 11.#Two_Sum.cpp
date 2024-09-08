@@ -21,4 +21,22 @@ public:
 
 
 // Optimal approach
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        map<int, int> p;
+        vector<int> l;
+        // p[nums[0]] = 0;
+        for(int i = 0; i<nums.size(); i++){
+            if(p.find(target-nums[i])!=p.end()){
+                l.push_back(i);
+                l.push_back(p[target-nums[i]]);
+                i = nums.size()-1;
+            }
+            p[nums[i]] = i;
+        }
+        return l;
+    }
+        
+};
 
